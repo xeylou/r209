@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         echo'<meta http-equiv="refresh" content="0">';
     }
     if(isset($_POST['changeQuantity'])){
-        $newQuantity=$_POST["changeQuantity"];
+        $newQuantity=$_POST['changeQuantity'];
         $changeQuantityQuery="UPDATE orderItems SET quantity = '$newQuantity' WHERE orderId = '$orderId'";
         $db->query($changeQuantityQuery);
         echo'<meta http-equiv="refresh" content="0">';

@@ -262,7 +262,10 @@ if(!isset($emptyCart)){
 </div>';
 }
 
-            
+$decrementQuantity="UPDATE ordersItems SET quantity = 0 WHERE userId = '$consumerId' AND wantedMangaId='$removedMangaId[0]'";
+$db->query($decrementQuantity);
+echo'<meta http-equiv="refresh" content="0">';
+
 include('footer.php');
 $db->close();
 unset($db);?>
