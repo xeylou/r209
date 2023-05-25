@@ -1,0 +1,10 @@
+version: '3'
+services:
+  php-apache-environment:
+    container_name: php-apache-adehu
+    image: php:8.0-apache
+    volumes:
+      # - ./php/src:/var/www/html/
+      - ./php:/var/www/html/
+    ports:
+      - 80:80
