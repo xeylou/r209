@@ -10,37 +10,49 @@ $orderData=$db->query($orderDataQuery)->fetchArray();
 
 include('navbar.php');
 echo '<button onclick="history.go(-1);">Back </button>';
+
+// if($_SERVER['REQUEST_METHOD']==='POST'){
+//     if(isset($_POST['changeOrderId'])){
+//         $newOrderId=$_POST["changeOrderId"];
+//         $changeOrderIdQuery="UPDATE ordersItems SET orderId = '$newOrderId' WHERE orderId = '$orderId'";
+//         $db->query($changeOrderIdQuery);
+//         echo'<meta http-equiv="refresh" content="0">';
+//     }
+//     if(isset($_POST['changeUserId'])){
+//         $newUserId=$_POST["changeUserId"];
+//         $changeUserIdQuery="UPDATE orderItems SET userId = '$newUserId' WHERE orderId = '$orderId'";
+//         $db->query($changeUserIdQuery);
+//         echo'<meta http-equiv="refresh" content="0">';
+//     }
+//     if(isset($_POST['changeWantedMangaId'])){
+//         $newWantedMangaId=$_POST["changeWantedMangaId"];
+//         $changeWantedMangaIdQuery="UPDATE orderItems SET wantedMangaId = '$newWantedMangaId' WHERE orderId = '$orderId'";
+//         $db->query($changeWantedMangaIdQuery);
+//         echo'<meta http-equiv="refresh" content="0">';
+//     }
+//     if(isset($_POST['changeDateCreated'])){
+//         $newDateCreated=$_POST["changeDateCreated"];
+//         $changeDateCreatedQuery="UPDATE orderItems SET dateCreated = '$newDateCreated' WHERE orderId = '$orderId'";
+//         $db->query($changeDateCreatedQuery);
+//         echo'<meta http-equiv="refresh" content="0">';
+//     }
+//     if(isset($_POST['changeQuantity'])){
+//         $newQuantity=$_POST['changeQuantity'];
+//         $changeQuantityQuery="UPDATE orderItems SET quantity = '$newQuantity' WHERE orderId = '$orderId'";
+//         $db->query($changeQuantityQuery);
+//         echo'<meta http-equiv="refresh" content="0">';
+//     }
+// }
+
 if($_SERVER['REQUEST_METHOD']==='POST'){
-    if(isset($_POST['changeOrderId'])){
-        $newOrderId=$_POST["changeOrderId"];
-        $changeOrderIdQuery="UPDATE ordersItems SET orderId = '$newOrderId' WHERE orderId = '$orderId'";
-        $db->query($changeOrderIdQuery);
-        echo'<meta http-equiv="refresh" content="0">';
-    }
-    if(isset($_POST['changeUserId'])){
-        $newUserId=$_POST["changeUserId"];
-        $changeUserIdQuery="UPDATE orderItems SET userId = '$newUserId' WHERE orderId = '$orderId'";
-        $db->query($changeUserIdQuery);
-        echo'<meta http-equiv="refresh" content="0">';
-    }
-    if(isset($_POST['changeWantedMangaId'])){
-        $newWantedMangaId=$_POST["changeWantedMangaId"];
-        $changeWantedMangaIdQuery="UPDATE orderItems SET wantedMangaId = '$newWantedMangaId' WHERE orderId = '$orderId'";
-        $db->query($changeWantedMangaIdQuery);
-        echo'<meta http-equiv="refresh" content="0">';
-    }
-    if(isset($_POST['changeDateCreated'])){
-        $newDateCreated=$_POST["changeDateCreated"];
-        $changeDateCreatedQuery="UPDATE orderItems SET dateCreated = '$newDateCreated' WHERE orderId = '$orderId'";
-        $db->query($changeDateCreatedQuery);
-        echo'<meta http-equiv="refresh" content="0">';
-    }
-    if(isset($_POST['changeQuantity'])){
-        $newQuantity=$_POST['changeQuantity'];
-        $changeQuantityQuery="UPDATE orderItems SET quantity = '$newQuantity' WHERE orderId = '$orderId'";
-        $db->query($changeQuantityQuery);
-        echo'<meta http-equiv="refresh" content="0">';
-    }
+    $newOrderId=$_POST["changeOrderId"];
+    $newUserId=$_POST["changeUserId"];
+    $newWantedMangaId=$_POST["changeWantedMangaId"];
+    $newDateCreated=$_POST["changeDateCreated"];
+    $newQuantity=$_POST['changeQuantity'];
+    $updateOrderItemsQuery="UPDATE ordersItems SET orderId = '$newOrderId', userId = '$newUserId', wantedMangaId = '$newWantedMangaId', dateCreated = '$newDateCreated', quantity = '$newQuantity' WHERE orderId = '$orderId'";
+    $db->query($updateOrderItemsQuery);
+    echo'<meta http-equiv="refresh" content="0">';
 }
 
 echo'

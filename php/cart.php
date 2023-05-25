@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         
 
         
-
+        //not the first manga
         if(isset($_POST["idToRemove".$wantedMangasData['mangaId'].""])){
                 
 
