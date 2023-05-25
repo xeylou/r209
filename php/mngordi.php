@@ -1,27 +1,22 @@
 <?php session_start();
 
-include'adminSecurityCheck.php';
+include('adminSecurityCheck.php');
 
-include'navbar.php';
+include('navbar.php');
 echo '<button onclick="history.go(-1);">Back </button>';
 
-$db=new SQLite3('r209-db-01.sqlite');
-$ordersItemsQuery='SELECT * from ordersItems';
-$ordersItemsData=$db->query($ordersItemsQuery);
+$ordersItemsDataQuery='SELECT * from ordersItems';
+$ordersDataItems=$db->query($ordersItemsDataQuery);
 
-while ($orderItemsData=$ordersItemsData->fetchArray()) {
-
-    $usernameQuerry='SELECT username FROM users WHERE userId = '.$orderItemsData['userId'].'';
-    $username=$db->query($usernameQuerry)->fetchArray();
-
+while ($orderItemsData=$ordersDataItems->fetchArray()){
     echo '<div class="admp">
         <p>
-        <a href="mngordi1.php?id='.$orderItemsData['orderId'].'">Manage '.$username['username'].' order</a>
+        <a href="mngordi1.php?id='.$orderItemsData['orderId'].'">Edit order '.$orderItemsData['orderId'].'</a>
         </p>
         </div>';
 }
 
 
-
 include'footer.php';
-?>
+$db->close();
+unset($db);?>
