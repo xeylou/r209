@@ -1,8 +1,8 @@
 <?php session_start();
 
-include'adminSecurityCheck.php';
+include('adminSecurityCheck.php');
 
-include'navbar.php';
+include('navbar.php');
 
 echo'<div class="admp">
         <p>
@@ -32,8 +32,7 @@ echo'<div class="admp">
         </p>
     </div>';
 
-include'footer.php';
-?>
+include('footer.php');?>
 
 
 
