@@ -45,7 +45,7 @@ echo'
 <p>Description (description):</p>
 <input type="text" name="newDescription">
 <p></p>
-<button type="submit">Add Article</button>
+<button type="submit">Add Manga</button>
 </div>
 </form>';
 

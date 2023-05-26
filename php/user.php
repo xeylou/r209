@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $userId = $_SESSION['userId'];
             $changePwdQuery="UPDATE users SET password = '$newPassword' WHERE userId = '$userId'";
             $changePwd=$db->query($changePwdQuery);
-            $success='<p style="color: green">Password   changed successfully!</p>';
+            $success='<p style="color: green">Password changed successfully!</p>';
         }
     }
 }

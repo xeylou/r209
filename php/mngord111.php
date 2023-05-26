@@ -39,7 +39,13 @@ echo'
 <button type="submit">Change</button>
 <p>Total Article (totalArticle):</p>
 <input type="text"  name="changeTotalArticle" value="'.$orderData['totalArticle'].'">
-<button type="submit">Change</button>  
+<button type="submit">Change</button>
+<br>
+<p></p>
+';
+if(isset($orderValidated)){echo"<p>$orderValidated</p>";}
+echo'
+<a href="validateOrder.php?orderId='.$orderData['orderId'].'">Validate Order
 </div>
 </form>';
 

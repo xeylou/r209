@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     //user pressed the submit button
     if(isset($_POST['validatedOrder'])){
         //adding the order in the orders table
-        $insertOrder=$db->prepare('INSERT INTO orders (userId, dateValidated, totalPrice, totalArticle) VALUES ("'.$consumerId.'", "'.$currentDate.'", "'.$totalPriceShipping.'", "'.$totalArticle[0].'")');
+        $insertOrder=$db->prepare('INSERT INTO orders (userId, dateValidated, totalPrice, totalArticle, isValidated) VALUES ("'.$consumerId.'", "'.$currentDate.'", "'.$totalPriceShipping.'", "'.$totalArticle[0].'", 0)');
         $insertOrder->execute();
         $db->close();
         unset($db);
