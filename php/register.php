@@ -36,7 +36,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     $addUser->execute();
 
                     //directly log the new user
-                    $_SESSION['userId']=$attemptNewUser;
+                    $catchingNewUserId="SELECT * FROM users where username = '$attemptNewUser'";
+                    $newUserId=$db->query($catchingNewUserId)->fetchArray();
+                    $_SESSION['userId']=$newUserId[0];
 
                     //double-check if logged by redirecting it to the logging page
                     //because if already logged user will be redirect to cart page

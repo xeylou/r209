@@ -25,6 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         while($tempData = $tempRes->fetchArray()) {
             $_SESSION['userId'] = $tempData['userId'];
         }
+
+        //looking if wanted manga is waiting
+        //if so, adding it in order
+        if(isset($_SESSION['wantedWaitingMangaId'])){
+            $currentDate=date('l jS \of F Y h:i:s A');
+            $addUser=$db->prepare('INSERT INTO ordersItems (userId, wantedMangaId, dateCreated, quantity) VALUES ('.$_SESSION['userId'].', '.$_SESSION['wantedWaitingMangaId'].', "'.$currentDate.'", 1)');
+            $addUser->execute();
+        }
+
         header("Location: cart.php");
         exit();
     }

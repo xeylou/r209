@@ -17,8 +17,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $newDateValidated=$_POST["changeDateValidated"];
     $newTotalPrice=$_POST["changeTotalPrice"];
     $newTotalArticle=$_POST['changeTotalArticle'];
-    $updateOrderQuere="UPDATE orders SET orderId = '$newOrderId', userId = '$newUserId', dateValidated = '$newDateValidated', totalArticle = '$newTotalPrice', totalArticle = '$newTotalArticle' WHERE orderId = '$orderId'";
-    $db->query($updateOrderQuery);
+    $updateOrder=$db->prepare("UPDATE orders SET orderId = '$newOrderId', userId = '$newUserId', dateValidated = '$newDateValidated', totalArticle = '$newTotalPrice', totalArticle = '$newTotalArticle' WHERE orderId = '$orderId'");
+    $updateOrder->execute();
     echo'<meta http-equiv="refresh" content="0">';
 }
 

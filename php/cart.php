@@ -41,6 +41,7 @@ else{
     $totalPrice1=$db->query($totalPriceQuery1);
     $totalPriceQuery2='SELECT quantity FROM ordersItems WHERE wantedMangaId IN (SELECT mangaId FROM mangas WHERE userId = '.$consumerId.')';
     $totalPrice2=$db->query($totalPriceQuery2);
+    //for each mangas price & quantity
     while($total1=$totalPrice1->fetchArray() AND $total2=$totalPrice2->fetchArray()){
         $totalPrice=$totalPrice+$total1[0]*$total2[0];
     }
@@ -50,9 +51,9 @@ else{
 }
 
 
-//remove a manga from order
-//or submit order
+//remove a manga from order or submit order
 if($_SERVER['REQUEST_METHOD']==='POST'){
+    
     if(isset($_POST['clearCart'])){
         $clearCartQuery='DELETE FROM ordersItems WHERE userId = '.$consumerId.'';
         $clearCart=$db->query($clearCartQuery);
@@ -200,7 +201,7 @@ if(!isset($emptyCart)){
                 $catchingQuantity=$db->query($catchingQuantityQuery)->fetchArray();
 
                 //displaying all the infos
-                echo "- $wantedMangasData[displayName] (#$wantedMangasData[volumeNumber]) | Quantity: x$catchingQuantity[0]<br><br>";
+                echo'- '.$wantedMangasData['displayName'].' (#'.$wantedMangasData['volumeNumber'].') | Quantity: x'.$catchingQuantity[0].'<br><br>';
             }
             //displaying static info
             echo "<b>Total articles: </b>$totalArticle[0]<br><br>";

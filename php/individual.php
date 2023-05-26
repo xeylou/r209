@@ -14,7 +14,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     //verify is stock left
     if($dataManga['stockLeft']<1){
         //there is no stock left so cancel the order
-
         $noStockLeft='<p style="color: red">Error: no stock left</p>';
     }
     else{
@@ -22,6 +21,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         if(!isset($_SESSION['userId'])){
             // $wantedMangaId=$dataManga.[0];
             header("Location:../../login.php");
+            $_SESSION['wantedWaitingMangaId']=$id;
             $db->close();
             exit();
         }
