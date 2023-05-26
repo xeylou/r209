@@ -75,13 +75,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     //all manga in the ordersItems
     while($wantedMangasData=$mangasInfoResults->fetchArray()){
 
-
-
-
-
-
-
-
         // if(isset($_POST["idToRemove".$wantedMangasData['mangaId'].""])){
         //     echo $wantedMangasData['mangaId'];
         // }
@@ -93,16 +86,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         //     echo 'aaaaa';
         //     //a remove button of a manga has been pressed
         //     //$wantedMangasData['mangaId'] is his mangaId
-
-
-
-
-
-
-
-
-
-        
 
         
         //not the first manga
@@ -154,17 +137,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             }
             
         }
-        
-
-
-
-
-
-
-
-
-
-            
 
         //     $newQuantity=$oldQuantity[0]-1;
         //     //quantity=0 so remove from ordersItems
