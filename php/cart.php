@@ -173,7 +173,7 @@ if(!isset($emptyCart)){
                 $catchingQuantity=$db->query($catchingQuantityQuery)->fetchArray();
 
                 //displaying all the infos
-                echo'- '.$wantedMangasData['displayName'].' (#'.$wantedMangasData['volumeNumber'].') | Quantity: x'.$catchingQuantity[0].'<br><br>';
+                // echo'- '.$wantedMangasData['displayName'].' (#'.$wantedMangasData['volumeNumber'].') | Quantity: x'.$catchingQuantity[0].'<br><br>';
             }
             //displaying static info
             echo "<b>Total articles: </b>$totalArticle[0]<br><br>";
