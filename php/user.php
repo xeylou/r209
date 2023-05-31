@@ -51,12 +51,12 @@ echo '
                                             <!-- <form method="POST" action="logging.php"> -->
                                             <form method="POST">
                                                 <div>
-                                                    <label>New password:</label>
-                                                    ';
+                                                ';
                                                     if(isset($errorPwd)){echo "<p>$errorPwd</p>";}
                                                     if(isset($emptyField)){echo "<p>$emptyField</p>";}
                                                     if(isset($success)){echo "<p>$success</p>";}
                                                     echo'
+                                                    <label>New password:</label>
                                                     <div>
                                                         <input type="password" name="newPassword">
                                                     </div>
