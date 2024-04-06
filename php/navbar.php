@@ -2,15 +2,16 @@
 
 
 <head>
+    <meta name="darkreader-lock">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Manila Manga</title>
     <meta name="description" content="Buy your mangas"/>
     <meta name="keywords" content="buy, manga"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/766013915536556056/1103986776583970937/manilla_mikey.jpg">
-    <link defer rel="stylesheet" href="https://cdn.discordapp.com/attachments/766013915536556056/1103987220710445076/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.discordapp.com/attachments/766013915536556056/1104383479724130314/style2.css"/>
+    <link rel="shortcut icon" href="manilla_mikey.jpg">
+    <link defer rel="stylesheet" href="bootstrap.min.css"/>
+    <link rel="stylesheet" href="style2.css"/>
 </head>
 
 
@@ -21,9 +22,9 @@
     <meta name="description" content="Site pour acheter vos mangas" />
     <meta name="keywords" content="achat, manga" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/766013915536556056/1103986776583970937/manilla_mikey.jpg">
-    <link defer rel="stylesheet" href="https://cdn.discordapp.com/attachments/766013915536556056/1103987220710445076/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.discordapp.com/attachments/766013915536556056/1104383479724130314/style2.css"/>
+    <link rel="shortcut icon" href="manilla_mikey.jpg">
+    <link defer rel="stylesheet" href="bootstrap.min.css"/>
+    <link rel="stylesheet" href="style2.css"/>
     
 </head>
 
